@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+  <sys_ui_policy_action action="INSERT_OR_UPDATE">
+    <sys_id>5ff53fc6d8d14faeaccfdea351f6a574</sys_id>
+    <sys_scope display_value="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+    <sys_update_name>sys_ui_policy_action_5ff53fc6d8d14faeaccfdea351f6a574</sys_update_name>
+    <cleared>false</cleared>
+    <disabled>ignore</disabled>
+    <field>u_check_out</field>
+    <field_message/>
+    <field_message_type>none</field_message_type>
+    <mandatory>true</mandatory>
+    <table>x_2137028_validp_0_visit</table>
+    <ui_policy short_description="Make Check-Out Time mandatory when checking out" table="x_2137028_validp_0_visit">be53873afe5a4df48009e13acb807da1</ui_policy>
+    <value/>
+    <value_action>ignore</value_action>
+    <visible>ignore</visible>
+  </sys_ui_policy_action>
+</record_update>
