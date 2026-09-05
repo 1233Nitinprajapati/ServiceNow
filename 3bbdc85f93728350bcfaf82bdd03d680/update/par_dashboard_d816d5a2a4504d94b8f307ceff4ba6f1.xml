@@ -5,7 +5,7 @@
     <sys_update_name>par_dashboard_d816d5a2a4504d94b8f307ceff4ba6f1</sys_update_name>
     <active>true</active>
     <certified>false</certified>
-    <description>Monitor current visitors on-site. Shows all visits with status Checked In, sorted by check-in time descending.</description>
-    <name>Active Visits - Current</name>
+    <description>Central operations dashboard for ValidParking. Monitor active visits, parking availability, daily visitors, visit history, and parking utilization.</description>
+    <name>ValidParking Operations</name>
   </par_dashboard>
 </record_update>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report">
+  <sys_report action="INSERT_OR_UPDATE">
+    <sys_id>5c7fca82114a4ce9972cf232a61d5665</sys_id>
+    <sys_scope display_value="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+    <sys_update_name>sys_report_5c7fca82114a4ce9972cf232a61d5665</sys_update_name>
+    <field_list>u_visitor.u_visitor_name,u_vehicle.u_vehicle_number,u_parking_slot.u_slot_number,u_status,u_check_in,u_check_out,sys_created_by</field_list>
+    <filter>sys_created_onRELATIVEGE@dayofweek@ago@7^ORDERBYDESCsys_created_on</filter>
+    <source_type>table</source_type>
+    <table>x_2137028_validp_0_visit</table>
+    <title>Visit History - All</title>
+    <type>list</type>
+    <user>GLOBAL</user>
+  </sys_report>
+</record_update>

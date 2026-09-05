@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report">
+  <sys_report action="INSERT_OR_UPDATE">
+    <sys_id>916d564aa5154f0abd6a55829ee5e7c3</sys_id>
+    <sys_scope display_value="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+    <sys_update_name>sys_report_916d564aa5154f0abd6a55829ee5e7c3</sys_update_name>
+    <field_list>u_parking_slot.u_slot_number,u_visitor.u_visitor_name,u_vehicle.u_vehicle_number,u_check_in</field_list>
+    <filter>u_status=checked_in^ORDERBYu_parking_slot</filter>
+    <source_type>table</source_type>
+    <table>x_2137028_validp_0_visit</table>
+    <title>Occupied Parking - Current</title>
+    <type>list</type>
+    <user>GLOBAL</user>
+  </sys_report>
+</record_update>

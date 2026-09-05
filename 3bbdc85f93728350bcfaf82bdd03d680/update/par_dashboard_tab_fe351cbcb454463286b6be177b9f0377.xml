@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="par_dashboard_tab">
+  <par_dashboard_tab action="INSERT_OR_UPDATE">
+    <sys_id>fe351cbcb454463286b6be177b9f0377</sys_id>
+    <sys_scope display_value="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+    <sys_update_name>par_dashboard_tab_fe351cbcb454463286b6be177b9f0377</sys_update_name>
+    <active>true</active>
+    <dashboard>d816d5a2a4504d94b8f307ceff4ba6f1</dashboard>
+    <name>Visit History</name>
+    <order>4</order>
+  </par_dashboard_tab>
+</record_update>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report">
+  <sys_report action="INSERT_OR_UPDATE">
+    <sys_id>9aca1d67c47444a1ba56cdf7fcc34550</sys_id>
+    <sys_scope display_value="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+    <sys_update_name>sys_report_9aca1d67c47444a1ba56cdf7fcc34550</sys_update_name>
+    <field_list>u_slot_number,u_slot_type</field_list>
+    <filter>u_status=available^ORDERBYu_slot_number</filter>
+    <source_type>table</source_type>
+    <table>x_2137028_validp_0_parking_slot</table>
+    <title>Available Parking Slots</title>
+    <type>list</type>
+    <user>GLOBAL</user>
+  </sys_report>
+</record_update>
