@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+  <sys_ui_policy_action action="INSERT_OR_UPDATE">
+    <sys_id>7d664026a0e54abf968728c4a2ddf5a0</sys_id>
+    <sys_scope display_value="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+    <sys_update_name>sys_ui_policy_action_7d664026a0e54abf968728c4a2ddf5a0</sys_update_name>
+    <cleared>false</cleared>
+    <disabled>true</disabled>
+    <field>u_vehicle</field>
+    <field_message/>
+    <field_message_type>none</field_message_type>
+    <mandatory>ignore</mandatory>
+    <table>x_2137028_validp_0_visit</table>
+    <ui_policy short_description="Lock historical Visit details on Check-Out" table="x_2137028_validp_0_visit">5f395e8393c34710bcfaf82bdd03d684</ui_policy>
+    <value/>
+    <value_action>ignore</value_action>
+    <visible>ignore</visible>
+  </sys_ui_policy_action>
+</record_update>
