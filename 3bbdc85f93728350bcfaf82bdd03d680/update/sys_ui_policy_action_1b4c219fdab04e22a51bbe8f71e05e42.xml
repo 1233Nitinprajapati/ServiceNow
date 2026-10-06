@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
-  <sys_ui_policy_action action="INSERT_OR_UPDATE">
-    <sys_id>1b4c219fdab04e22a51bbe8f71e05e42</sys_id>
-    <sys_scope display_value="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
-    <sys_update_name>sys_ui_policy_action_1b4c219fdab04e22a51bbe8f71e05e42</sys_update_name>
-    <cleared>false</cleared>
-    <disabled>true</disabled>
-    <field>u_parking_slot</field>
-    <field_message/>
-    <field_message_type>none</field_message_type>
-    <mandatory>ignore</mandatory>
-    <table>x_2137028_validp_0_visit</table>
-    <ui_policy short_description="Lock historical Visit details on Check-Out" table="x_2137028_validp_0_visit">5f395e8393c34710bcfaf82bdd03d684</ui_policy>
-    <value/>
-    <value_action>ignore</value_action>
-    <visible>ignore</visible>
-  </sys_ui_policy_action>
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>true</disabled>
+        <field>u_parking_slot</field>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 11:27:11</sys_created_on>
+        <sys_id>1b4c219fdab04e22a51bbe8f71e05e42</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>u_parking_slot</sys_name>
+        <sys_package display_value="validparking" source="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+        <sys_update_name>sys_ui_policy_action_1b4c219fdab04e22a51bbe8f71e05e42</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 11:27:11</sys_updated_on>
+        <table>x_2137028_validp_0_visit</table>
+        <ui_policy display_value="Lock historical Visit details on Check-Out">5f395e8393c34710bcfaf82bdd03d684</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <visible>ignore</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=1b4c219fdab04e22a51bbe8f71e05e42"/>
 </record_update>

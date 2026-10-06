@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2137028_validp_0.CheckParkingSlot</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>CheckParkingSlot</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var CheckParkingSlot = Class.create();
+CheckParkingSlot.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    checkSlot: function() {
+
+        var slotId = this.getParameter('sysparm_slot_id');
+
+        if (!slotId) {
+            return 'invalid';
+        }
+
+        var slot = new GlideRecord('x_2137028_validp_0_parking_slot');
+
+        if (slot.get(slotId)) {
+            return slot.getValue('u_status');
+        }
+
+        return 'not_found';
+    },
+
+    type: 'CheckParkingSlot'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-24 13:07:10</sys_created_on>
+        <sys_id>849f30d3933a8350bcfaf82bdd03d6c2</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>CheckParkingSlot</sys_name>
+        <sys_package display_value="validparking" source="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+        <sys_update_name>sys_script_include_849f30d3933a8350bcfaf82bdd03d6c2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 11:29:39</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>print_badge</action_name>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition>current.u_status == 'checked_in'</condition>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_icon/>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>true</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_button_icon/>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Print Visitor Badge</name>
+        <onclick>printBadge()</onclick>
+        <order>120</order>
+        <script><![CDATA[function printBadge() {
+
+    var sysId = g_form.getUniqueValue();
+
+    if (!sysId || sysId == '-1') {
+        alert('Please save the record first before printing a badge.');
+        return false;
+    }
+
+    var visitorName = g_form.getDisplayValue('u_visitor') || 'N/A';
+    var vehiclePlate = g_form.getDisplayValue('u_vehicle') || 'N/A';
+    var slotNumber = g_form.getDisplayValue('u_parking_slot') || 'N/A';
+    var checkInTime = g_form.getDisplayValue('u_check_in_time') || 'N/A';
+
+    var visitId = sysId.substring(0, 8).toUpperCase();
+
+    var badgeHtml = '';
+
+    badgeHtml += '<!DOCTYPE html>';
+    badgeHtml += '<html>';
+    badgeHtml += '<head>';
+    badgeHtml += '<title>Visitor Badge</title>';
+
+    badgeHtml += '<style>';
+    badgeHtml += 'body { font-family: Arial; text-align: center; padding: 20px; }';
+    badgeHtml += '.badge { border: 3px solid #2c3e50; border-radius: 10px; padding: 25px; width: 350px; margin: auto; }';
+    badgeHtml += 'h2 { color: #2c3e50; margin: 0 0 5px 0; }';
+    badgeHtml += '.visit-id { font-size: 12px; color: #888; margin-bottom: 10px; }';
+    badgeHtml += 'hr { border: none; border-top: 1px solid #ccc; margin: 15px 0; }';
+    badgeHtml += '.label { font-weight: bold; color: #555; font-size: 11px; display: block; text-transform: uppercase; }';
+    badgeHtml += '.value { font-size: 16px; color: #000; margin-bottom: 12px; display: block; }';
+    badgeHtml += '.footer { font-size: 11px; color: #888; margin-top: 20px; font-style: italic; }';
+    badgeHtml += '</style>';
+
+    badgeHtml += '</head>';
+    badgeHtml += '<body>';
+
+    badgeHtml += '<div class="badge">';
+
+    badgeHtml += '<h2>VISITOR BADGE</h2>';
+    badgeHtml += '<div class="visit-id">ID: ' + visitId + '</div>';
+
+    badgeHtml += '<hr>';
+
+    badgeHtml += '<span class="label">Visitor</span>';
+    badgeHtml += '<span class="value">' + visitorName + '</span>';
+
+    badgeHtml += '<span class="label">Vehicle</span>';
+    badgeHtml += '<span class="value">' + vehiclePlate + '</span>';
+
+    badgeHtml += '<span class="label">Parking Slot</span>';
+    badgeHtml += '<span class="value">' + slotNumber + '</span>';
+
+    badgeHtml += '<span class="label">Check-In Time</span>';
+    badgeHtml += '<span class="value">' + checkInTime + '</span>';
+
+    badgeHtml += '<hr>';
+
+    badgeHtml += '<div class="footer">';
+    badgeHtml += 'Please display this badge at all times while on premises.';
+    badgeHtml += '</div>';
+
+    badgeHtml += '</div>';
+
+    badgeHtml += '</body>';
+    badgeHtml += '</html>';
+
+    // Create hidden iframe
+    var iframe = document.createElement('iframe');
+
+    iframe.style.position = 'fixed';
+    iframe.style.left = '-10000px';
+    iframe.style.top = '-10000px';
+    iframe.style.width = '1px';
+    iframe.style.height = '1px';
+    iframe.style.border = '0';
+
+    document.body.appendChild(iframe);
+
+    var doc = iframe.contentWindow.document;
+
+    doc.open();
+    doc.write(badgeHtml);
+    doc.close();
+
+    setTimeout(function() {
+
+        iframe.contentWindow.focus();
+        iframe.contentWindow.print();
+
+        setTimeout(function() {
+            if (document.body.contains(iframe)) {
+                document.body.removeChild(iframe);
+            }
+        }, 3000);
+
+    }, 500);
+
+    // Prevent UI Action from submitting/navigating the form
+    return false;
+}]]></script>
+        <show_form_icon_only>false</show_form_icon_only>
+        <show_insert>false</show_insert>
+        <show_list_icon_only>false</show_list_icon_only>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-18 19:49:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>866c4b5793d3c790bcfaf82bdd03d6fc</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Print Visitor Badge</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="validparking" source="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+        <sys_update_name>sys_ui_action_866c4b5793d3c790bcfaf82bdd03d6fc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-18 20:45:59</sys_updated_on>
+        <table>x_2137028_validp_0_visit</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>

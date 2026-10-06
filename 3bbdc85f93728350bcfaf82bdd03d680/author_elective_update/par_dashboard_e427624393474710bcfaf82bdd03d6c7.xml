@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard">
+    <par_dashboard action="DELETE">
+        <active>true</active>
+        <base_dashboard/>
+        <certified>false</certified>
+        <description> Quickly see which slots are free for new visitors.</description>
+        <experience/>
+        <grid>0</grid>
+        <name>Available Parking (Show free slots)</name>
+        <ready_to_migrate>Not Applicable</ready_to_migrate>
+        <sys_class_name>par_dashboard</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 12:13:07</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e427624393474710bcfaf82bdd03d6c7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Available Parking (Show free slots)</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="validparking" source="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+        <sys_update_name>par_dashboard_e427624393474710bcfaf82bdd03d6c7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 12:13:07</sys_updated_on>
+        <sys_ux_app_config/>
+        <sys_ux_app_route/>
+        <sys_ux_macroponent/>
+        <sys_ux_screen/>
+        <sys_ux_screen_type/>
+    </par_dashboard>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</application>
+        <file_path/>
+        <instance_id>0cfb7713ff488354c80bf8e4fc4fd960</instance_id>
+        <instance_name>dev378231</instance_name>
+        <name>par_dashboard_e427624393474710bcfaf82bdd03d6c7</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard"><par_dashboard action="INSERT_OR_UPDATE"><active>true</active><base_dashboard/><certified>false</certified><description> Quickly see which slots are free for new visitors.</description><experience/><grid>0</grid><name>Available Parking (Show free slots)</name><ready_to_migrate>Not Applicable</ready_to_migrate><sys_class_name>par_dashboard</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-05 12:13:07</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>e427624393474710bcfaf82bdd03d6c7</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Available Parking (Show free slots)</sys_name><sys_overrides/><sys_package display_value="validparking" source="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_package><sys_policy/><sys_scope display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</sys_scope><sys_update_name>par_dashboard_e427624393474710bcfaf82bdd03d6c7</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-05 12:13:07</sys_updated_on><sys_ux_app_config/><sys_ux_app_route/><sys_ux_macroponent/><sys_ux_screen/><sys_ux_screen_type/></par_dashboard></record_update>]]></payload>
+        <payload_hash>1248962309</payload_hash>
+        <record_name>Available Parking (Show free slots)</record_name>
+        <reverted_from/>
+        <source/>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 12:13:39</sys_created_on>
+        <sys_id>cf576a4393474710bcfaf82bdd03d6a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a0717d1a1f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 12:13:39</sys_updated_on>
+        <type>PAR Dashboard</type>
+        <update_guid>8f576a43cf47471021e9adcb22374ba8</update_guid>
+        <update_guid_history>8f576a43cf47471021e9adcb22374ba8:1248962309</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Available Parking (Show free slots)">4f576a4393474710bcfaf82bdd03d6a9</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 12:13:39</sys_created_on>
+        <sys_db_object display_value="" name="par_dashboard">par_dashboard</sys_db_object>
+        <sys_id>1e6630a21a2245c8870a410c04a47d90</sys_id>
+        <sys_metadata>e427624393474710bcfaf82bdd03d6c7</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Available Parking (Show free slots)</sys_name>
+        <sys_package display_value="validparking" source="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+        <sys_scope_delete display_value="">135e707ca1f945ca84dda98e91e70d24</sys_scope_delete>
+        <sys_update_name>par_dashboard_e427624393474710bcfaf82bdd03d6c7</sys_update_name>
+        <sys_update_version display_value="par_dashboard_e427624393474710bcfaf82bdd03d6c7">cf576a4393474710bcfaf82bdd03d6a8</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 12:13:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

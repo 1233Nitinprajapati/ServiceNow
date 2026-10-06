@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
+    <sp_column action="DELETE">
+        <aria_label/>
+        <class_name/>
+        <order>2</order>
+        <semantic_tag/>
+        <size>1</size>
+        <size_lg/>
+        <size_sm/>
+        <size_xs/>
+        <sp_row display_value="1">3b66503f93db4b90bcfaf82bdd03d610</sp_row>
+        <sys_class_name>sp_column</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-19 19:52:11</sys_created_on>
+        <sys_id>2096583f93db4b90bcfaf82bdd03d673</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>2</sys_name>
+        <sys_package display_value="validparking" source="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+        <sys_update_name>sp_column_2096583f93db4b90bcfaf82bdd03d673</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-19 19:52:11</sys_updated_on>
+    </sp_column>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</application>
+        <file_path/>
+        <instance_id>0cfb7713ff488354c80bf8e4fc4fd960</instance_id>
+        <instance_name>dev378231</instance_name>
+        <name>sp_column_2096583f93db4b90bcfaf82bdd03d673</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column"><sp_column action="INSERT_OR_UPDATE"><aria_label/><class_name/><order>2</order><semantic_tag/><size>1</size><size_lg/><size_sm/><size_xs/><sp_row display_value="1">3b66503f93db4b90bcfaf82bdd03d610</sp_row><sys_class_name>sp_column</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-19 19:52:11</sys_created_on><sys_id>2096583f93db4b90bcfaf82bdd03d673</sys_id><sys_mod_count>0</sys_mod_count><sys_name>2</sys_name><sys_package display_value="validparking" source="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_package><sys_policy/><sys_scope display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</sys_scope><sys_update_name>sp_column_2096583f93db4b90bcfaf82bdd03d673</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-19 19:52:11</sys_updated_on></sp_column></record_update>]]></payload>
+        <payload_hash>2137234289</payload_hash>
+        <record_name>2</record_name>
+        <reverted_from/>
+        <source>4ccdc85f93728350bcfaf82bdd03d6a1</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-19 19:52:11</sys_created_on>
+        <sys_id>e496583f93db4b90bcfaf82bdd03d676</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a0bb39f0520000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-19 19:52:11</sys_updated_on>
+        <type>Column</type>
+        <update_guid>a496583fdfdb4b9058d0e1aadb20b675</update_guid>
+        <update_guid_history>a496583fdfdb4b9058d0e1aadb20b675:2137234289</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="2">1e96583f93db4b90bcfaf82bdd03d67a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-19 19:52:18</sys_created_on>
+        <sys_db_object display_value="" name="sp_column">sp_column</sys_db_object>
+        <sys_id>420a69efc6a3498592473fc88e96f0d9</sys_id>
+        <sys_metadata>2096583f93db4b90bcfaf82bdd03d673</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>2</sys_name>
+        <sys_package display_value="validparking" source="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+        <sys_scope_delete display_value="">135e707ca1f945ca84dda98e91e70d24</sys_scope_delete>
+        <sys_update_name>sp_column_2096583f93db4b90bcfaf82bdd03d673</sys_update_name>
+        <sys_update_version display_value="sp_column_2096583f93db4b90bcfaf82bdd03d673">e496583f93db4b90bcfaf82bdd03d676</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-19 19:52:18</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

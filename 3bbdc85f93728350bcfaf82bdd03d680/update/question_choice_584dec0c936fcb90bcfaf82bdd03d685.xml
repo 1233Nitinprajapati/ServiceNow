@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <order>300</order>
+        <published_ref/>
+        <question display_value="Purpose">278c60c8936fcb90bcfaf82bdd03d6a5</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-20 16:10:44</sys_created_on>
+        <sys_id>584dec0c936fcb90bcfaf82bdd03d685</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Driving Lience</sys_name>
+        <sys_package display_value="validparking" source="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+        <sys_update_name>question_choice_584dec0c936fcb90bcfaf82bdd03d685</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-20 16:10:44</sys_updated_on>
+        <text>Driving Lience</text>
+        <value>driving_l</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=584dec0c936fcb90bcfaf82bdd03d685"/>
+</record_update>

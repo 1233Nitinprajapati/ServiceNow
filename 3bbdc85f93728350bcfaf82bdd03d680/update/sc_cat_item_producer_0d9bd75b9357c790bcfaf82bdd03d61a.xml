@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_producer">
+    <sc_cat_item_producer action="INSERT_OR_UPDATE">
+        <access_type>restricted</access_type>
+        <active>true</active>
+        <allow_edit>false</allow_edit>
+        <availability>on_desktop</availability>
+        <billable>false</billable>
+        <can_cancel>false</can_cancel>
+        <category display_value="Visitor Services">725cdf9b9357c790bcfaf82bdd03d68d</category>
+        <cc_render_type>system</cc_render_type>
+        <checked_out>false</checked_out>
+        <cost>0</cost>
+        <custom_cart/>
+        <delivery_plan display_value="DEFAULT">523da512c611228900811a37c97c2014</delivery_plan>
+        <delivery_plan_script/>
+        <delivery_time>1970-01-03 00:00:00</delivery_time>
+        <description><![CDATA[<p>Use this form to request a parking slot for a visitor. Reception will be notified.</p>]]></description>
+        <display_price_property>non_zero</display_price_property>
+        <entitlement_script/>
+        <flow_designer_flow/>
+        <fulfillment_automation_level>unspecified</fulfillment_automation_level>
+        <group/>
+        <hide_sp>false</hide_sp>
+        <icon/>
+        <ignore_price>true</ignore_price>
+        <image/>
+        <location/>
+        <make_item_non_conversational>false</make_item_non_conversational>
+        <mandatory_attachment>false</mandatory_attachment>
+        <meta/>
+        <mobile_hide_price>false</mobile_hide_price>
+        <mobile_picture/>
+        <mobile_picture_type>use_desktop_picture</mobile_picture_type>
+        <model/>
+        <name>Request Visitor Parking</name>
+        <no_attachment_v2>false</no_attachment_v2>
+        <no_cart>false</no_cart>
+        <no_cart_v2>false</no_cart_v2>
+        <no_delivery_time_v2>false</no_delivery_time_v2>
+        <no_order>false</no_order>
+        <no_order_now>false</no_order_now>
+        <no_proceed_checkout>false</no_proceed_checkout>
+        <no_quantity>false</no_quantity>
+        <no_quantity_v2>false</no_quantity_v2>
+        <no_save_as_draft>false</no_save_as_draft>
+        <no_search>false</no_search>
+        <no_wishlist_v2>false</no_wishlist_v2>
+        <omit_price>false</omit_price>
+        <order>0</order>
+        <ordered_item_link/>
+        <owner display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</owner>
+        <picture>b1ecd31f9357c790bcfaf82bdd03d62c</picture>
+        <post_insert_script><![CDATA[/**
+* This script is executed after the record is generated. 
+* `current` Is the GlideRecord produced by Record Producer. Use `current.update()` to update the record
+* To access the variables, use `producer.var1` where var1 is the name of the variable
+* To access the Record Producer use `cat_item`
+*/]]></post_insert_script>
+        <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=0d9bd75b9357c790bcfaf82bdd03d61a&amp;sysparm_preview=true", "summary");</preview>
+        <price>0</price>
+        <published_ref/>
+        <recurring_frequency/>
+        <redirect_url>generated_record</redirect_url>
+        <request_method/>
+        <roles/>
+        <save_options/>
+        <save_script><![CDATA[/**
+* This script is executed at every step save in Catalog Builder. 
+* This script is executed before `Script` is executed.
+* `current` Is the GlideRecord produced by Record Producer. 
+* To access the variables, use `producer.var1` where var1 is the name of the variable
+* To access the Record Producer use `cat_item`
+*/]]></save_script>
+        <sc_catalogs>e0d08b13c3330100c8b837659bba8fb4</sc_catalogs>
+        <sc_ic_item_staging/>
+        <sc_ic_version/>
+        <sc_template/>
+        <script><![CDATA[(function() {
+    
+    // ---------- STEP 1: FIND OR CREATE THE VISITOR ----------
+    var visitorSysId = '';
+    var visitorEmail = producer.getValue('visitor_email');
+    
+    var visitorGr = new GlideRecord('x_2137028_validp_0_visitor');
+    visitorGr.addQuery('u_email', visitorEmail);
+    visitorGr.setLimit(1);
+    visitorGr.query();
+
+    if (visitorGr.next()) {
+        visitorSysId = visitorGr.getUniqueValue();
+    } else {
+        var newVisitor = new GlideRecord('x_2137028_validp_0_visitor');
+        newVisitor.initialize();
+        
+        var fullName  = String(producer.visitor_name || '');
+        
+
+        newVisitor.u_visitor_name = fullName;
+        newVisitor.u_email      = visitorEmail;
+        newVisitor.u_company    = producer.visitor_company || '';
+		newVisitor.setValue('u_status','registered');
+		newVisitor.u_id_proof = producer.id_proof || " ";
+		newVisitor.u_purpose  = producer.purpose || ' ';
+		newVisitor.u_phone = producer.phone || ' ';
+		    visitorSysId = newVisitor.insert();
+    }
+
+    // ---------- STEP 2: CREATE THE VEHICLE ----------
+    var vehicleSysId = '';
+    if (producer.vehicle_plate) {
+        var vehicleGr = new GlideRecord('x_2137028_validp_0_vehicle');
+        vehicleGr.initialize();
+        vehicleGr.u_vehicle_number = producer.vehicle_plate;
+        vehicleGr.u_visitor       = visitorSysId;
+		vehicleGr.u_vehicle_type = producer.vehicle_type || ' ';
+        vehicleSysId = vehicleGr.insert();
+    }
+
+    // ---------- STEP 3: FIND AN AVAILABLE PARKING SLOT ----------
+    var slotSysId = '';
+    var slotLabel = 'No slot available';
+    
+    var slotGr = new GlideRecord('x_2137028_validp_0_parking_slot');
+    slotGr.addQuery('u_status', 'available');
+    slotGr.addQuery('u_slot_type', producer.slot_type);
+    slotGr.orderBy('u_slot_number');
+    slotGr.setLimit(1);
+    slotGr.query();
+
+    if (slotGr.next()) {
+		slotGr.setValue('u_status','reserved');
+		slotGr.update();
+        slotSysId = slotGr.getUniqueValue();
+        slotLabel = slotGr.u_slot_number.toString();
+    }
+
+    // ---------- STEP 4: MAP VALUES TO CURRENT VISIT RECORD ----------
+    current.u_visitor = visitorSysId;
+    current.u_vehicle = vehicleSysId;
+    
+    if (slotSysId) {
+        current.u_parking_slot = slotSysId;
+
+    }
+
+    current.u_status = 'scheduled';
+
+    // Corrected to match the actual variable name: arrival_date
+    if (producer.arrival_date) {
+        current.u_check_in = producer.arrival_date;
+    }
+
+    // ---------- STEP 5: USER FEEDBACK ----------
+    if (slotSysId) {
+        gs.addInfoMessage('Parking request submitted. Slot ' + slotLabel + ' reserved for your visitor.');
+    } else {
+        gs.addInfoMessage('Parking request submitted, but no ' + producer.slot_type + ' slot is currently available.');
+    }
+
+})();]]></script>
+        <secondary_owners/>
+        <short_description>Submit a parking request for an expected visitor</short_description>
+        <show_variable_help_on_load>false</show_variable_help_on_load>
+        <start_closed>false</start_closed>
+        <state>published</state>
+        <sys_class_name>sc_cat_item_producer</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-18 21:00:37</sys_created_on>
+        <sys_id>0d9bd75b9357c790bcfaf82bdd03d61a</sys_id>
+        <sys_mod_count>41</sys_mod_count>
+        <sys_name>Request Visitor Parking</sys_name>
+        <sys_package display_value="validparking" source="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+        <sys_update_name>sc_cat_item_producer_0d9bd75b9357c790bcfaf82bdd03d61a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-20 18:40:03</sys_updated_on>
+        <table_name>x_2137028_validp_0_visit</table_name>
+        <taxonomy_topic/>
+        <template/>
+        <template_manager_roles/>
+        <type>item</type>
+        <use_sc_layout>true</use_sc_layout>
+        <vendor/>
+        <version>41</version>
+        <view/>
+        <visible_bundle>true</visible_bundle>
+        <visible_guide>true</visible_guide>
+        <visible_standalone>true</visible_standalone>
+        <workflow/>
+    </sc_cat_item_producer>
+    <sys_translated_text action="delete_multiple" query="documentkey=0d9bd75b9357c790bcfaf82bdd03d61a"/>
+    <fx_price action="delete_multiple" query="id=0d9bd75b9357c790bcfaf82bdd03d61a"/>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>price</field>
+        <id>0d9bd75b9357c790bcfaf82bdd03d61a</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-18 21:00:37</sys_created_on>
+        <sys_id>d5ac9b579357c790bcfaf82bdd03d600</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-18 21:00:37</sys_updated_on>
+        <table>sc_cat_item_producer</table>
+        <type>calculated</type>
+    </fx_price>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color>#6699ff</average_image_color>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/png</content_type>
+        <file_name>picture</file_name>
+        <hash>5fa7db4f1ff515248f7da74d4fffa54f9b576e5e8a349f4ac7a1eb73fdc24285</hash>
+        <image_height>148</image_height>
+        <image_width>149</image_width>
+        <size_bytes>1576</size_bytes>
+        <size_compressed>1599</size_compressed>
+        <state>available</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-18 21:01:45</sys_created_on>
+        <sys_id>b1ecd31f9357c790bcfaf82bdd03d62c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-18 21:01:45</sys_updated_on>
+        <table_name>ZZ_YYsc_cat_item_producer</table_name>
+        <table_sys_id>0d9bd75b9357c790bcfaf82bdd03d61a</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/w==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="picture" sys_id="b1ecd31f9357c790bcfaf82bdd03d62c">b1ecd31f9357c790bcfaf82bdd03d62c</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-18 21:01:45</sys_created_on>
+        <sys_id>75ecd31f9357c790bcfaf82bdd03d62c</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>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</data>
+        <length>2120</length>
+        <position>1</position>
+        <sys_attachment display_value="picture" sys_id="b1ecd31f9357c790bcfaf82bdd03d62c">b1ecd31f9357c790bcfaf82bdd03d62c</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-18 21:01:45</sys_created_on>
+        <sys_id>39ecd31f9357c790bcfaf82bdd03d62c</sys_id>
+    </sys_attachment_doc>
+</record_update>

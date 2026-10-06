@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <alternate_portal/>
+        <communication_channels/>
+        <css_variables/>
+        <dark_theme/>
+        <default>false</default>
+        <embeddable_macroponents/>
+        <enable_ais>false</enable_ais>
+        <enable_certificate_based_authentication>false</enable_certificate_based_authentication>
+        <enable_embeddables>false</enable_embeddables>
+        <enable_favorites>false</enable_favorites>
+        <hide_portal_name>false</hide_portal_name>
+        <homepage display_value="visitor_parking_home">2d6554bb93db4b90bcfaf82bdd03d6cb</homepage>
+        <icon>7f3bdb8c93a34f90bcfaf82bdd03d68d</icon>
+        <inactive>false</inactive>
+        <kb_knowledge_base/>
+        <kb_knowledge_page/>
+        <login_page/>
+        <logo/>
+        <logo_alt_text>Visitor Parking Portal</logo_alt_text>
+        <notfound_page/>
+        <quick_start_config/>
+        <rtl_enabled>false</rtl_enabled>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <search_application/>
+        <search_results_configuration/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu/>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-19 19:46:15</sys_created_on>
+        <sys_id>fa151c7b93db4b90bcfaf82bdd03d601</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Visitor Parking Portal</sys_name>
+        <sys_package display_value="validparking" source="x_2137028_validp_0">3bbdc85f93728350bcfaf82bdd03d680</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="validparking">3bbdc85f93728350bcfaf82bdd03d680</sys_scope>
+        <sys_update_name>sp_portal_fa151c7b93db4b90bcfaf82bdd03d601</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-21 04:50:00</sys_updated_on>
+        <theme/>
+        <title>Visitor Parking Portal</title>
+        <ts_index_group/>
+        <url_suffix>visitor_parking</url_suffix>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=fa151c7b93db4b90bcfaf82bdd03d601"/>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color>#6699ff</average_image_color>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/png</content_type>
+        <file_name>icon</file_name>
+        <hash>5fa7db4f1ff515248f7da74d4fffa54f9b576e5e8a349f4ac7a1eb73fdc24285</hash>
+        <image_height>148</image_height>
+        <image_width>149</image_width>
+        <size_bytes>1576</size_bytes>
+        <size_compressed>1599</size_compressed>
+        <state>available</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-21 04:49:58</sys_created_on>
+        <sys_id>7f3bdb8c93a34f90bcfaf82bdd03d68d</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-21 04:50:00</sys_updated_on>
+        <table_name>ZZ_YYsp_portal</table_name>
+        <table_sys_id>fa151c7b93db4b90bcfaf82bdd03d601</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/w==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="icon" sys_id="7f3bdb8c93a34f90bcfaf82bdd03d68d">7f3bdb8c93a34f90bcfaf82bdd03d68d</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-21 04:49:58</sys_created_on>
+        <sys_id>333bdb8c93a34f90bcfaf82bdd03d68e</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>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</data>
+        <length>2120</length>
+        <position>1</position>
+        <sys_attachment display_value="icon" sys_id="7f3bdb8c93a34f90bcfaf82bdd03d68d">7f3bdb8c93a34f90bcfaf82bdd03d68d</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-21 04:49:58</sys_created_on>
+        <sys_id>f33bdb8c93a34f90bcfaf82bdd03d68e</sys_id>
+    </sys_attachment_doc>
+</record_update>
